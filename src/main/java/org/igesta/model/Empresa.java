@@ -19,7 +19,7 @@ public class Empresa {
     private String nome;
     private String cnpj;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -31,7 +31,7 @@ public class Empresa {
         return cnpj;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
