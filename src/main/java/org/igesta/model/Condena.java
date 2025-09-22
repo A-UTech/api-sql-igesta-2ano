@@ -19,7 +19,7 @@ public class Condena {
     private String nome;
     private String tipo;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -31,7 +31,7 @@ public class Condena {
         return tipo;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

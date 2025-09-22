@@ -20,7 +20,7 @@ public class Gestor {
     private String senha;
     private String cpf;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -44,7 +44,7 @@ public class Gestor {
         return senha;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
