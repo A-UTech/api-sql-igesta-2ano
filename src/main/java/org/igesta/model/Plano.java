@@ -1,24 +1,22 @@
 package org.igesta.model;
 
-
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Date;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Turno {
+public class Plano {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "id_gestor")
-    private Long idGestor;
     private String nome;
-    private Date horaInicio;
-    private Date horaFim;
+    private double preco;
+    private String armazenamento;
 }
