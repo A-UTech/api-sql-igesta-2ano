@@ -3,11 +3,11 @@ package org.igesta.dto;
 import lombok.Getter;
 import lombok.Setter;
 
-@Setter
 @Getter
-public class CondenaResponseDTO {
+@Setter
+public class EmpresaResponseDTO {
 
     private Long id;
     private String nome;
-    private String tipo;
+    private String cnpj;
 }
