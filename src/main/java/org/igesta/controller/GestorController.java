@@ -1,6 +1,6 @@
 package org.igesta.controller;
 
-import org.igesta.service.GestoService;
+import org.igesta.service.GestorService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/igesta/gestores")
 public class GestorController {
 
-    private final GestoService gestoService;
+    private final GestorService gestorService;
 
-    public GestorController(GestoService gestoService) {
-        this.gestoService = gestoService;
+    public GestorController(GestorService gestorService) {
+        this.gestorService = gestorService;
     }
 }
