@@ -6,7 +6,6 @@ import lombok.Setter;
 @Setter
 @Getter
 public class CondenaResponseDTO {
-
     private Long id;
     private String nome;
     private String tipo;
