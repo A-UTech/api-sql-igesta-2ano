@@ -49,7 +49,7 @@ public class CondenaController {
     }
 
     @GetMapping("/selecionarPorParteDoNome/{nome}")
-    public ResponseEntity<Object> buscarProdutoPorParteDoNome(@PathVariable String nome) {
+    public ResponseEntity<Object> buscarCondenaPorParteDoNome(@PathVariable String nome) {
         String nomeBuscado = "%" + nome + "%";
         List<CondenaResponseDTO> condenas = condenaService.buscarCondenaPorParteDoNome(nomeBuscado);
         return ResponseEntity.ok(condenas);
@@ -63,20 +63,20 @@ public class CondenaController {
     }
 
     @DeleteMapping("/excluir/{id}")
-    public ResponseEntity<Object> excluirProduto(@PathVariable Long id) {
+    public ResponseEntity<Object> excluirCondena(@PathVariable Long id) {
         CondenaResponseDTO condenaExcluida = condenaService.removerCondena(id);
         return ResponseEntity.ok(condenaExcluida);
     }
 
     @PutMapping("/atualizar/{id}")
-    public ResponseEntity<Object> atualizarProduto(@PathVariable Long id,
+    public ResponseEntity<Object> atualizarCondena(@PathVariable Long id,
                                                    @Validated({OnCreate.class, Default.class}) @RequestBody CondenaRequestDTO dto) {
         CondenaResponseDTO condenaSalva = condenaService.atualizarCondena(id, dto);
         return ResponseEntity.ok(condenaSalva);
     }
 
     @PatchMapping("/atualizarParcial/{id}")
-    public ResponseEntity<?> atualizarProdutoParcial(@PathVariable Long id, @RequestBody
+    public ResponseEntity<?> atualizarCondenaParcial(@PathVariable Long id, @RequestBody
     @Validated({OnPatch.class, Default.class}) CondenaRequestDTO atualizacao) {
         CondenaResponseDTO condenaAtualizada = condenaService.atualizarCondenaParcial(id, atualizacao);
         return ResponseEntity.ok(condenaAtualizada);
