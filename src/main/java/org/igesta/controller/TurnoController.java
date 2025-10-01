@@ -1,8 +1,6 @@
 package org.igesta.controller;
 
 import jakarta.validation.groups.Default;
-import org.igesta.dto.PlanoRequestDTO;
-import org.igesta.dto.PlanoResponseDTO;
 import org.igesta.dto.TurnoRequestDTO;
 import org.igesta.dto.TurnoResponseDTO;
 import org.igesta.model.Turno;

@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
+@RestController
+@RequestMapping("/igesta/planos")
 public class PlanoController {
 
     private final PlanoService planoService;
