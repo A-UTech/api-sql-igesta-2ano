@@ -1,5 +1,4 @@
 package org.igesta.dto;
-import lombok.AllArgsConstructor;
 
 
 public class LiderResponseDTO {
