@@ -7,6 +7,7 @@ import org.igesta.dto.LiderRequestDTO;
 import org.igesta.dto.LiderResponseDTO;
 import org.igesta.model.Condena;
 import org.igesta.model.Lider;
+import org.igesta.openapi.LiderOpenApi;
 import org.igesta.service.CondenaService;
 import org.igesta.service.LiderService;
 import org.igesta.validation.OnCreate;
@@ -20,7 +21,7 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/igesta/lideres")
-public class LiderController {
+public class LiderController implements LiderOpenApi {
 
     private final LiderService liderService;
 
@@ -29,7 +30,7 @@ public class LiderController {
     }
 
     @GetMapping("/selecionar")
-    public ResponseEntity<List<Lider>> listarLideres() {
+    public ResponseEntity<List<Lider>> listarTodosLideres() {
         List<Lider> listaLider = liderService.listarLideres();
         return ResponseEntity.ok(listaLider);
     }
@@ -60,14 +61,14 @@ public class LiderController {
     }
 
     @PutMapping("/atualizar/{id}")
-    public ResponseEntity<Object> atualizarProduto(@PathVariable Long id,
+    public ResponseEntity<Object> atualizarLider(@PathVariable Long id,
                                                    @Validated({OnCreate.class, Default.class}) @RequestBody LiderRequestDTO dto) {
         LiderResponseDTO lider = liderService.atualizarlider(id, dto);
         return ResponseEntity.ok(lider);
     }
 
     @PatchMapping("/atualizarParcial/{id}")
-    public ResponseEntity<?> atualizarProdutoParcial(@PathVariable Long id, @RequestBody
+    public ResponseEntity<?> atualizarLiderParcial(@PathVariable Long id, @RequestBody
     @Validated({OnPatch.class, Default.class}) LiderRequestDTO dto) {
         LiderResponseDTO liderAtualizado = liderService.atualizarLiderParcial(id, dto);
         return ResponseEntity.ok(liderAtualizado);

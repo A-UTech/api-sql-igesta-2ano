@@ -4,6 +4,7 @@ import jakarta.validation.groups.Default;
 import org.igesta.dto.EmpresaRequestDTO;
 import org.igesta.dto.EmpresaResponseDTO;
 import org.igesta.model.Empresa;
+import org.igesta.openapi.EmpresaOpenApi;
 import org.igesta.service.EmpresaService;
 import org.igesta.validation.OnCreate;
 import org.igesta.validation.OnPatch;
@@ -16,7 +17,7 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/igesta/empresas")
-public class EmpresaController {
+public class EmpresaController implements EmpresaOpenApi {
 
     private final EmpresaService empresaService;
 

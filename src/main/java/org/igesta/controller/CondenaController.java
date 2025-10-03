@@ -1,6 +1,8 @@
 package org.igesta.controller;
 
+
 import jakarta.validation.groups.Default;
+import org.igesta.openapi.CondenaOpenApi;
 import org.igesta.dto.CondenaRequestDTO;
 import org.igesta.dto.CondenaResponseDTO;
 import org.igesta.model.Condena;
@@ -16,7 +18,7 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/igesta/condenas")
-public class CondenaController {
+public class CondenaController implements CondenaOpenApi {
 
     private final CondenaService condenaService;
 
@@ -61,6 +63,7 @@ public class CondenaController {
         CondenaResponseDTO condenaSalva = condenaService.adicionarCondena(dto);
         return ResponseEntity.ok(condenaSalva);
     }
+
 
     @DeleteMapping("/excluir/{id}")
     public ResponseEntity<Object> excluirCondena(@PathVariable Long id) {

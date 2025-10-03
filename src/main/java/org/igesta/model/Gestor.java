@@ -14,7 +14,7 @@ public class Gestor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "id_empresa")
-    private int idEmpresa;
+    private Integer idEmpresa;
     private String nome;
     private String email;
     private String senha;
@@ -24,7 +24,7 @@ public class Gestor {
         return id;
     }
 
-    public int getIdEmpresa() {
+    public Integer getIdEmpresa() {
         return idEmpresa;
     }
 
@@ -48,7 +48,7 @@ public class Gestor {
         this.id = id;
     }
 
-    public void setIdEmpresa(int idEmpresa) {
+    public void setIdEmpresa(Integer idEmpresa) {
         this.idEmpresa = idEmpresa;
     }
 
