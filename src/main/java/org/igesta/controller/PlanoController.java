@@ -4,6 +4,7 @@ import jakarta.validation.groups.Default;
 import org.igesta.dto.PlanoRequestDTO;
 import org.igesta.dto.PlanoResponseDTO;
 import org.igesta.model.Plano;
+import org.igesta.openapi.PlanoOpenApi;
 import org.igesta.service.PlanoService;
 import org.igesta.validation.OnCreate;
 import org.igesta.validation.OnPatch;
@@ -16,7 +17,7 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/igesta/planos")
-public class PlanoController {
+public class PlanoController implements PlanoOpenApi {
 
     private final PlanoService planoService;
 
@@ -25,7 +26,7 @@ public class PlanoController {
     }
 
     @GetMapping("/selecionar")
-    public ResponseEntity<List<Plano>> listarPlano() {
+    public ResponseEntity<List<Plano>> listarTodosPlanos() {
         List<Plano> planos = planoService.listarTodos();
         return ResponseEntity.ok(planos);
     }
@@ -50,7 +51,7 @@ public class PlanoController {
     }
 
     @PutMapping("/atualizar/{id}")
-    public ResponseEntity<Object> atualizarProduto(@PathVariable Long id,
+    public ResponseEntity<Object> atualizarPlano(@PathVariable Long id,
                                                    @Validated({OnCreate.class, Default.class}) @RequestBody PlanoRequestDTO dto) {
         PlanoResponseDTO plano = planoService.atualizarPlano(id, dto);
         return ResponseEntity.ok(plano);

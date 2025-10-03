@@ -4,6 +4,7 @@ import jakarta.validation.groups.Default;
 import org.igesta.dto.TurnoRequestDTO;
 import org.igesta.dto.TurnoResponseDTO;
 import org.igesta.model.Turno;
+import org.igesta.openapi.TurnoOpenApi;
 import org.igesta.service.TurnoService;
 import org.igesta.validation.OnCreate;
 import org.igesta.validation.OnPatch;
@@ -16,7 +17,7 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/igesta/turnos")
-public class TurnoController {
+public class TurnoController implements TurnoOpenApi {
 
     private final TurnoService turnoService;
 
@@ -25,7 +26,7 @@ public class TurnoController {
     }
 
     @GetMapping("/selecionar")
-    public ResponseEntity<List<Turno>> listarTurno() {
+    public ResponseEntity<List<Turno>> listarTodosTurnos() {
         List<Turno> turnos = turnoService.listarTodos();
         return ResponseEntity.ok(turnos);
     }
@@ -37,7 +38,7 @@ public class TurnoController {
     }
 
     @PostMapping("/inserir")
-    public ResponseEntity<Object> inserirPlano(@RequestBody
+    public ResponseEntity<Object> inserirTurno(@RequestBody
                                                @Validated({OnCreate.class, Default.class}) TurnoRequestDTO dto) {
         TurnoResponseDTO turno = turnoService.inserirTurno(dto);
         return ResponseEntity.ok(turno);
@@ -50,7 +51,7 @@ public class TurnoController {
     }
 
     @PutMapping("/atualizar/{id}")
-    public ResponseEntity<Object> atualizarProduto(@PathVariable Long id,
+    public ResponseEntity<Object> atualizarTurno(@PathVariable Long id,
                                                    @Validated({OnCreate.class, Default.class}) @RequestBody TurnoRequestDTO dto) {
         TurnoResponseDTO turno = turnoService.atualizarTurno(id, dto);
         return ResponseEntity.ok(turno);

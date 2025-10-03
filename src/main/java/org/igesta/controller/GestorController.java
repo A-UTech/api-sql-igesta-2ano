@@ -5,6 +5,7 @@ import jakarta.validation.groups.Default;
 import org.igesta.dto.GestorRequestDTO;
 import org.igesta.dto.GestorResponseDTO;
 import org.igesta.model.Gestor;
+import org.igesta.openapi.GestorOpenApi;
 import org.igesta.service.GestorService;
 import org.igesta.validation.OnCreate;
 import org.igesta.validation.OnPatch;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/igesta/gestores")
-public class GestorController {
+public class GestorController implements GestorOpenApi {
 
     private final GestorService gestorService;
 
