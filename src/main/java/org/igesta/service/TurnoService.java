@@ -8,7 +8,7 @@ import org.igesta.dto.TurnoResponseDTO;
 import org.igesta.model.Turno;
 import org.igesta.repository.TurnoRepository;
 import org.springframework.stereotype.Service;
-import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -22,8 +22,9 @@ public class TurnoService {
         this.objectMapper = objectMapper;
     }
 
-    public List<Turno> buscarTurnos() {
-        return turnoRepository.findAll();
+    public List<Turno> listarTodos() {
+        List<Turno> turnos = turnoRepository.findAll();
+        return turnos;
     }
 
     public TurnoResponseDTO buscarTurnoPorId(Long id) {
@@ -62,14 +63,14 @@ public class TurnoService {
             turno.setNome(nome);
         }
 
-        if (atualizacoes.getInicio() != null) {
-            LocalTime horaInicio =  atualizacoes.getInicio();
-            atualizacoes.setInicio(horaInicio);
+        if (atualizacoes.getHoraInicio() != null) {
+            Date horaInicio =  atualizacoes.getHoraInicio();
+            atualizacoes.setHoraInicio(horaInicio);
         }
 
-        if (atualizacoes.getFim() != null) {
-            LocalTime horaFim =  atualizacoes.getFim();
-            atualizacoes.setFim(horaFim);
+        if (atualizacoes.getHoraFim() != null) {
+            Date horaFim =  atualizacoes.getHoraFim();
+            atualizacoes.setHoraFim(horaFim);
         }
 
         return objectMapper.convertValue(turnoRepository.save(turno), TurnoResponseDTO.class);
