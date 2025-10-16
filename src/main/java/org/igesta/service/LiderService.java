@@ -2,11 +2,8 @@ package org.igesta.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
-import org.igesta.dto.CondenaRequestDTO;
-import org.igesta.dto.CondenaResponseDTO;
 import org.igesta.dto.LiderRequestDTO;
 import org.igesta.dto.LiderResponseDTO;
-import org.igesta.model.Condena;
 import org.igesta.model.Lider;
 import org.igesta.repository.LiderRepository;
 import org.springframework.stereotype.Service;
@@ -24,7 +21,7 @@ public class LiderService {
         this.objectMapper = objectMapper;
     }
 
-    public List<Lider> listarLideres() {
+    public List<Lider> buscarLideres() {
         List<Lider> turnos = liderRepository.findAll();
         return turnos;
     }

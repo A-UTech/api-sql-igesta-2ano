@@ -23,7 +23,7 @@ public interface LiderOpenApi {
             @ApiResponse(responseCode = "200", description = "Lista retornada com sucesso",
                     content = @Content(mediaType = "application/json"))
     })
-    public ResponseEntity<List<Lider>> listarTodosLideres();
+    public ResponseEntity<List<Lider>> buscarLideres();
 
     @Operation(summary = "Busca líder por ID",
             description = "Retorna um líder pelo seu ID")

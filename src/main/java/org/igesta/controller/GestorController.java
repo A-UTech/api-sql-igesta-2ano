@@ -30,8 +30,8 @@ public class GestorController implements GestorOpenApi {
     }
 
     @GetMapping("/selecionar")
-    public ResponseEntity<List<Gestor>> listarTodosGestores() {
-        List<Gestor> listaGestores = gestorService.buscarTodosGestores();
+    public ResponseEntity<List<Gestor>> buscarGestores() {
+        List<Gestor> listaGestores = gestorService.buscarGestores();
         return ResponseEntity.ok(listaGestores);
     }
 

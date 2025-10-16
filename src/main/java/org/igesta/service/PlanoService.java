@@ -22,7 +22,7 @@ public class PlanoService {
         this.objectMapper = objectMapper;
     }
 
-    public List<Plano> listarTodos() {
+    public List<Plano> buscarPlanos() {
         List<Plano> planos = planoRepository.findAll();
         return planos;
     }

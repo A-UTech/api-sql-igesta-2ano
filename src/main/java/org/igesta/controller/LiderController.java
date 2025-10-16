@@ -1,14 +1,10 @@
 package org.igesta.controller;
 
 import jakarta.validation.groups.Default;
-import org.igesta.dto.CondenaRequestDTO;
-import org.igesta.dto.CondenaResponseDTO;
 import org.igesta.dto.LiderRequestDTO;
 import org.igesta.dto.LiderResponseDTO;
-import org.igesta.model.Condena;
 import org.igesta.model.Lider;
 import org.igesta.openapi.LiderOpenApi;
-import org.igesta.service.CondenaService;
 import org.igesta.service.LiderService;
 import org.igesta.validation.OnCreate;
 import org.igesta.validation.OnPatch;
@@ -30,8 +26,8 @@ public class LiderController implements LiderOpenApi {
     }
 
     @GetMapping("/selecionar")
-    public ResponseEntity<List<Lider>> listarTodosLideres() {
-        List<Lider> listaLider = liderService.listarLideres();
+    public ResponseEntity<List<Lider>> buscarLideres() {
+        List<Lider> listaLider = liderService.buscarLideres();
         return ResponseEntity.ok(listaLider);
     }
 
