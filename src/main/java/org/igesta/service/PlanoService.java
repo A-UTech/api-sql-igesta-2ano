@@ -8,6 +8,7 @@ import org.igesta.dto.PlanoResponseDTO;
 import org.igesta.model.Plano;
 import org.igesta.repository.PlanoRepository;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
@@ -21,8 +22,9 @@ public class PlanoService {
         this.objectMapper = objectMapper;
     }
 
-    public List<Plano> buscarPlanos() {
-        return planoRepository.findAll();
+    public List<Plano> listarTodos() {
+        List<Plano> planos = planoRepository.findAll();
+        return planos;
     }
 
     public PlanoResponseDTO buscarPlanoPorId(Long id) {

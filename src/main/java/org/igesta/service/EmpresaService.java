@@ -8,6 +8,7 @@ import org.igesta.dto.EmpresaResponseDTO;
 import org.igesta.model.Empresa;
 import org.igesta.repository.EmpresaRepository;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class EmpresaService {
         this.objectMapper = objectMapper;
     }
 
-    public List<Empresa> buscarEmpresas() {
+    public List<Empresa> buscarTodasEmpresas() {
         return empresaRepository.findAll();
     }
 
