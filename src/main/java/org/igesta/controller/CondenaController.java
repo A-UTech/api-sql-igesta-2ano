@@ -28,7 +28,7 @@ public class CondenaController implements CondenaOpenApi {
 
     @GetMapping("/selecionar")
     public ResponseEntity<List<Condena>> listarTodasCondenas() {
-        List<Condena> listaCondenas = condenaService.buscarTodasCondenas();
+        List<Condena> listaCondenas = condenaService.buscarCondenas();
         return ResponseEntity.ok(listaCondenas);
     }
 

@@ -19,10 +19,10 @@ public class TurnoRequestDTO {
     @NotNull(groups = OnCreate.class)
     @Pattern(regexp = "^(?:[01]\\d|2[0-3]):[0-5]\\d$", message = "O horário de início deve estar no formato HH:mm!")
     @Schema(description = "Hora de início do turno", example = "07:00")
-    private String horarioInicio;
+    private String inicio;
 
     @NotNull(groups = OnCreate.class)
     @Pattern(regexp = "^(?:[01]\\d|2[0-3]):[0-5]\\d$", message = "O horário de fim deve estar no formato HH:mm!")
     @Schema(description = "Hora de término do turno", example = "15:00")
-    private String horarioFim;
+    private String fim;
 }

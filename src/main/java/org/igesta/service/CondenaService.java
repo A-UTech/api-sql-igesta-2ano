@@ -8,7 +8,6 @@ import org.igesta.dto.CondenaResponseDTO;
 import org.igesta.model.Condena;
 import org.igesta.repository.CondenaRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +20,7 @@ public class CondenaService {
         this.objectMapper = objectMapper;
     }
 
-    public List<Condena> buscarTodasCondenas() {
+    public List<Condena> buscarCondenas() {
         return condenaRepository.findAll();
     }
 

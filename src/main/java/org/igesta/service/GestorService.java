@@ -8,7 +8,6 @@ import org.igesta.dto.GestorResponseDTO;
 import org.igesta.model.Gestor;
 import org.igesta.repository.GestorRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +21,7 @@ public class GestorService {
         this.objectMapper = objectMapper;
     }
 
-    public List<Gestor> buscarTodosGestores() {
+    public List<Gestor> buscarGestores() {
         return gestorRepository.findAll();
     }
 

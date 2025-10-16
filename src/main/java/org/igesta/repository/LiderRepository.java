@@ -1,6 +1,5 @@
 package org.igesta.repository;
 
-import org.igesta.model.Condena;
 import org.igesta.model.Lider;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
