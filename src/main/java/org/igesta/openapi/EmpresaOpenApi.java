@@ -23,7 +23,7 @@ public interface EmpresaOpenApi {
             @ApiResponse(responseCode = "200", description = "Lista retornada com sucesso",
                     content = @Content(mediaType = "application/json"))
     })
-    public ResponseEntity<List<Empresa>> listarTodasEmpresas();
+    public ResponseEntity<List<Empresa>> buscarEmpresas();
 
     @Operation(summary = "Busca empresa por ID",
             description = "Retorna uma empresa pelo seu ID")

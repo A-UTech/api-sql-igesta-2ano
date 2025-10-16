@@ -23,7 +23,7 @@ public interface GestorOpenApi {
             @ApiResponse(responseCode = "200", description = "Lista retornada com sucesso",
                     content = @Content(mediaType = "application/json"))
     })
-    public ResponseEntity<List<Gestor>> listarTodosGestores();
+    public ResponseEntity<List<Gestor>> buscarGestores();
 
     @Operation(summary = "Busca gestor por ID",
             description = "Retorna um gestor pelo seu ID")

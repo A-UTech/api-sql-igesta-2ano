@@ -23,7 +23,7 @@ public class EmpresaService {
         this.objectMapper = objectMapper;
     }
 
-    public List<Empresa> buscarTodasEmpresas() {
+    public List<Empresa> buscarEmpresas() {
         return empresaRepository.findAll();
     }
 

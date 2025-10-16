@@ -25,7 +25,7 @@ public interface CondenaOpenApi {
             @ApiResponse(responseCode = "200", description = "Lista retornada com sucesso",
                     content = @Content(mediaType = "application/json"))
     })
-    public ResponseEntity<List<Condena>> listarTodasCondenas();
+    public ResponseEntity<List<Condena>> buscarCondenas();
 
     @Operation(summary = "Busca condena por ID",
             description = "Retorna uma condena pelo seu ID")

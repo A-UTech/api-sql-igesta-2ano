@@ -23,7 +23,7 @@ public interface PlanoOpenApi {
             @ApiResponse(responseCode = "200", description = "Lista retornada com sucesso",
                     content = @Content(mediaType = "application/json"))
     })
-    public ResponseEntity<List<Plano>> listarTodosPlanos();
+    public ResponseEntity<List<Plano>> buscarPlanos();
 
     @Operation(summary = "Busca plano por ID",
             description = "Retorna um plano pelo seu ID")

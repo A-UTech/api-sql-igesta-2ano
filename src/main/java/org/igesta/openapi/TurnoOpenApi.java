@@ -24,7 +24,7 @@ public interface TurnoOpenApi {
             @ApiResponse(responseCode = "200", description = "Lista retornada com sucesso",
                     content = @Content(mediaType = "application/json"))
     })
-    public ResponseEntity<List<Turno>> listarTodosTurnos();
+    public ResponseEntity<List<Turno>> buscarTurnos();
 
     @Operation(summary = "Busca turno por ID",
             description = "Retorna um turno pelo seu ID")

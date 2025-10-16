@@ -21,7 +21,7 @@ public class CondenaService {
         this.objectMapper = objectMapper;
     }
 
-    public List<Condena> buscarTodasCondenas() {
+    public List<Condena> buscarCondenas() {
         return condenaRepository.findAll();
     }
 

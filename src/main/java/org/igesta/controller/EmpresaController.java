@@ -26,8 +26,8 @@ public class EmpresaController implements EmpresaOpenApi {
     }
 
     @GetMapping("/selecionar")
-    public ResponseEntity<List<Empresa>> listarTodasEmpresas() {
-        List<Empresa> listaEmpresas = empresaService.buscarTodasEmpresas();
+    public ResponseEntity<List<Empresa>> buscarEmpresas() {
+        List<Empresa> listaEmpresas = empresaService.buscarEmpresas();
         return ResponseEntity.ok(listaEmpresas);
     }
 

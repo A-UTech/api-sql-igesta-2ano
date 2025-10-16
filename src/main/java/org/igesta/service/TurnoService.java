@@ -22,7 +22,7 @@ public class TurnoService {
         this.objectMapper = objectMapper;
     }
 
-    public List<Turno> listarTodos() {
+    public List<Turno> buscarTurnos() {
         List<Turno> turnos = turnoRepository.findAll();
         return turnos;
     }

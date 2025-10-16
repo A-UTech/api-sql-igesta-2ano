@@ -22,7 +22,7 @@ public class GestorService {
         this.objectMapper = objectMapper;
     }
 
-    public List<Gestor> buscarTodosGestores() {
+    public List<Gestor> buscarGestores() {
         return gestorRepository.findAll();
     }
 
