@@ -27,7 +27,7 @@ public class PlanoController implements PlanoOpenApi {
 
     @GetMapping("/selecionar")
     public ResponseEntity<List<Plano>> buscarPlanos() {
-        List<Plano> planos = planoService.listarTodos();
+        List<Plano> planos = planoService.buscarPlanos();
         return ResponseEntity.ok(planos);
     }
 

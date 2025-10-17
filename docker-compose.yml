@@ -11,3 +11,11 @@ services:
       SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
     ports:
       - "8080:8080"
+    volumes:
+      - ~/.m2:/root/.m2
+    healthcheck:
+      test: ["CMD", "curl", "-f", "https://api-sql-igesta-2ano.onrender.com/igesta/condenas/selecionar"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
