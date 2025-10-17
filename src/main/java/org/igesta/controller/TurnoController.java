@@ -27,7 +27,7 @@ public class TurnoController implements TurnoOpenApi {
 
     @GetMapping("/selecionar")
     public ResponseEntity<List<Turno>> buscarTurnos() {
-        List<Turno> turnos = turnoService.listarTodos();
+        List<Turno> turnos = turnoService.buscarTurnos();
         return ResponseEntity.ok(turnos);
     }
 
