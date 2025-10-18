@@ -19,6 +19,6 @@ public class TipoUsuarioRequestDTO {
 
     @NotNull(groups = OnCreate.class)
     @Pattern(regexp = ".*\\S.*", message = "A senha não pode estar em branco!")
-    @Schema(description = "Senha do usuário", example = "123456")
+    @Schema(description = "Senha do usuário", example = "1234")
     private String senha;
 }
