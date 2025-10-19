@@ -19,6 +19,7 @@ public class Unidade {
     private Long idPlano;
     @Column(name = "id_empresa")
     private Long idEmpresa;
+    private String senha;
 
     public Long getId() {
         return id;
@@ -74,5 +75,13 @@ public class Unidade {
 
     public void setIdPlano(Long idPlano) {
         this.idPlano = idPlano;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }
