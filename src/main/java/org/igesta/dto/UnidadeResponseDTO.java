@@ -17,4 +17,5 @@ public class UnidadeResponseDTO {
     private Long idPlano;
     @Column(name = "id_empresa")
     private Long idEmpresa;
+    private String senha;
 }

@@ -1,5 +1,6 @@
 package org.igesta.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -27,4 +28,7 @@ public class UnidadeRequestDTO {
     private Long idPlano;
     @Column(name = "id_empresa")
     private Long idEmpresa;
+    @Pattern(regexp = ".*\\S.*\\S.*", message = "A senha não pode estar em branco!")
+    @NotNull(groups = OnCreate.class)
+    private String senha;
 }
