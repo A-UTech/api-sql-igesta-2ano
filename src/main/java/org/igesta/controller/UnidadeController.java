@@ -4,6 +4,7 @@ import jakarta.validation.groups.Default;
 import org.igesta.dto.UnidadeRequestDTO;
 import org.igesta.dto.UnidadeResponseDTO;
 import org.igesta.model.Unidade;
+import org.igesta.openapi.UnidadeOpenApi;
 import org.igesta.service.UnidadeService;
 import org.igesta.validation.OnCreate;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +16,7 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/igesta/unidades")
-public class UnidadeController {
+public class UnidadeController implements UnidadeOpenApi {
 
     private final UnidadeService unidadeService;
 
@@ -43,7 +44,7 @@ public class UnidadeController {
     }
 
     @DeleteMapping("/excluir/{id}")
-    public ResponseEntity<UnidadeResponseDTO> excluirTurno(@PathVariable Long id) {
+    public ResponseEntity<UnidadeResponseDTO> excluirUnidade(@PathVariable Long id) {
         UnidadeResponseDTO unidade = unidadeService.removerUnidade(id);
         return ResponseEntity.ok(unidade);
     }
