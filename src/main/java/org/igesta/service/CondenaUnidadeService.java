@@ -41,7 +41,7 @@ public class CondenaUnidadeService {
 
         condenaUnidadeRepository.save(condenaUnidade);
 
-        return new CondenaUnidadeResponseDTO(condenaUnidade.getIdUnidade(), condenaUnidade.getIdCondena());
+        return new CondenaUnidadeResponseDTO(condenaUnidade.getIdCondena());
     }
 
     @Transactional
@@ -57,7 +57,6 @@ public class CondenaUnidadeService {
 
         return entidades.stream()
                 .map(entidade -> new CondenaUnidadeResponseDTO(
-                        entidade.getIdUnidade().intValue(),
                         entidade.getIdCondena().intValue()
                 ))
                 .collect(Collectors.toList());
