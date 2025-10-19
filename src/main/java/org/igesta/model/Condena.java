@@ -1,5 +1,6 @@
 package org.igesta.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -44,5 +45,6 @@ public class Condena {
     }
 
     @OneToMany(mappedBy = "condena", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<CondenaUnidade> unidadeCondenas = new HashSet<>();
 }
