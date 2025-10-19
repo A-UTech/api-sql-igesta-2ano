@@ -13,13 +13,9 @@ public class LiderResponseDTO {
     @Schema(description = "ID único do líder", example = "1234")
     private Long id;
 
-    @Column(name = "id_empresa")
-    @Schema(description = "ID único da empresa que o líder trabalha", example = "1234")
-    private Long idEmpresa;
-
-    @Column(name = "id_empresa")
-    @Schema(description = "ID único do gestor que comanda o líder", example = "1234")
-    private Long idGestor;
+    @Column(name = "id_unidade")
+    @Schema(description = "ID único da unidade que o líder trabalha", example = "1234")
+    private Long idUnidade;
 
     @Schema(description = "Nome do líder", example = "Thiago Gabriel Marinho Cardoso")
     private String nome;
@@ -32,4 +28,7 @@ public class LiderResponseDTO {
 
     @Schema(description = "Cpf do líder", example = "676.767.676-76")
     private String cpf;
+
+    @Schema(description = "Área do líder", example = "Área Fria")
+    private String area;
 }

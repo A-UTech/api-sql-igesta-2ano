@@ -12,9 +12,9 @@ import org.igesta.validation.OnCreate;
 @Setter
 @Schema(description = "Objeto para criação/atualização de gestor")
 public class GestorRequestDTO {
-    @Column(name = "id_empresa")
-    @Schema(description = "ID único da empresa que ogestor trabalha", example = "1234")
-    private Integer idEmpresa;
+    @Column(name = "id_unidade")
+    @Schema(description = "ID único da unidade que o gestor trabalha", example = "1234")
+    private Integer idUnidade;
 
     @NotNull(groups = OnCreate.class)
     @Pattern(regexp = ".*\\S.*\\S.*", message = "O nome não pode estar em branco!")

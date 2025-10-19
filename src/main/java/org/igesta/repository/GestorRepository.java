@@ -9,7 +9,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface GestorRepository extends JpaRepository<Gestor, Long> {
-
     @Query("SELECT g FROM Gestor g WHERE g.nome = :nome")
     List<Gestor> findByNome(@Param("nome") String nome);
 

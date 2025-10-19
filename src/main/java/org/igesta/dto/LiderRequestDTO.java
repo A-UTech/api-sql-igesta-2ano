@@ -13,9 +13,9 @@ import org.igesta.validation.OnCreate;
 @Schema(description = "Objeto para criação/atualização de líder")
 public class LiderRequestDTO {
 
-    @Column(name = "id_empresa")
-    @Schema(description = "ID único da empresa que ogestor trabalha", example = "1234")
-    private Long idEmpresa;
+    @Column(name = "id_unidade")
+    @Schema(description = "ID único da empresa que o líder trabalha", example = "1234")
+    private Long idUnidade;
 
     @NotNull(groups = OnCreate.class)
     @Pattern(regexp = ".*\\S.*\\S.*", message = "O nome não pode estar em branco!")
@@ -37,4 +37,8 @@ public class LiderRequestDTO {
     @Schema(description = "Cpf do líder", example = "676.767.676-76")
     private String cpf;
 
+    @NotNull(groups = OnCreate.class)
+    @Pattern(regexp = ".*\\S.*\\S.*", message = "A área não pode estar em branco!")
+    @Schema(description = "Área do líder", example = "Área Fria")
+    private String area;
 }
