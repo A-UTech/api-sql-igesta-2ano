@@ -1,12 +1,12 @@
 package org.igesta.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @AllArgsConstructor
@@ -42,4 +42,7 @@ public class Condena {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+    @OneToMany(mappedBy = "condena", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<CondenaUnidade> unidadeCondenas = new HashSet<>();
 }

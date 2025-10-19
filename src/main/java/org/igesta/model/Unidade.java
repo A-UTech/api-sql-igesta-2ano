@@ -1,7 +1,11 @@
 package org.igesta.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor
@@ -84,4 +88,8 @@ public class Unidade {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "unidade", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<CondenaUnidade> condenaUnidades = new HashSet<>();
 }
