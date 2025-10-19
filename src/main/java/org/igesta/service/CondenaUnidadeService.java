@@ -3,7 +3,7 @@ package org.igesta.service;
 import org.igesta.dto.CondenaUnidadeRequestDTO;
 import org.igesta.dto.CondenaUnidadeResponseDTO;
 import org.igesta.model.CondenaUnidade;
-import org.igesta.model.CondenaUnidadeId; // Usamos a classe da chave para DELETE e Mapeamento
+import org.igesta.model.CondenaUnidadeId;
 import org.igesta.model.Unidade;
 import org.igesta.model.Condena;
 import org.igesta.repository.CondenaUnidadeRepository;
@@ -53,10 +53,8 @@ public class CondenaUnidadeService {
 
     public List<CondenaUnidadeResponseDTO> buscarCondenasPorUnidade(Integer unidadeId) {
 
-        // Usa o método definido no seu repositório
         List<CondenaUnidade> entidades = condenaUnidadeRepository.findByIdUnidade(unidadeId);
 
-        // Converte a lista de Entidades para a lista de DTOs
         return entidades.stream()
                 .map(entidade -> new CondenaUnidadeResponseDTO(
                         entidade.getIdUnidade().intValue(),

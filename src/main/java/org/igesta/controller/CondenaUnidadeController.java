@@ -2,6 +2,7 @@ package org.igesta.controller;
 
 import org.igesta.dto.CondenaUnidadeRequestDTO;
 import org.igesta.dto.CondenaUnidadeResponseDTO;
+import org.igesta.openapi.CondenaUnidadeOpenApi;
 import org.igesta.service.CondenaUnidadeService;
 import org.igesta.validation.OnCreate;
 
@@ -13,9 +14,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/igesta/condena-unidade")
-public class CondenaUnidadeController {
+public class CondenaUnidadeController implements CondenaUnidadeOpenApi {
 
     @Autowired
     private CondenaUnidadeService service;

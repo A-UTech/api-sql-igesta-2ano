@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "condena_unidade")
-@IdClass(CondenaUnidadeId.class) // <--- USANDO O ID CLASS
+@IdClass(CondenaUnidadeId.class)
 @Getter
 @Setter
 public class CondenaUnidade {
