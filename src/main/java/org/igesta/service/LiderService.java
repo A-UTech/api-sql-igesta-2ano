@@ -69,10 +69,6 @@ public class LiderService {
 
         Lider atualizacoes =objectMapper.convertValue(dto, Lider.class);
 
-        if (atualizacoes.getIdGestor() != 0){
-            Long idGestor = atualizacoes.getIdGestor();
-            lider.setIdGestor(idGestor);
-        }
         if (atualizacoes.getNome() != null) {
             String nome = atualizacoes.getNome();
             lider.setNome(nome);

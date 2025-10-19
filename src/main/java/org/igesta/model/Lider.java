@@ -13,13 +13,12 @@ public class Lider {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "id_empresa")
-    private Long idEmpresa;
-    @Column(name = "id_gestor")
-    private Long idGestor;
+    @Column(name = "id_unidade")
+    private Long idUnidade;
     private String nome;
     private String email;
     private String senha;
     private String cpf;
+    private String area;
 }
 
