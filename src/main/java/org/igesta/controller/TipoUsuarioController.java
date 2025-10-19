@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.igesta.validation.OnCreate;
 
 @RestController
-@RequestMapping("/api/tipo-usuario")
+@RequestMapping("/igesta/tipo-usuario")
 public class TipoUsuarioController implements TipoUsuarioOpenApi {
 
     private final TipoUsuarioService tipoUsuarioService;
