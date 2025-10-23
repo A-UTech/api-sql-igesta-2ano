@@ -13,7 +13,7 @@ import org.igesta.validation.OnCreate;
 public class TurnoRequestDTO {
     @NotNull(groups = OnCreate.class)
     @Pattern(regexp = ".*\\S.*\\S.*", message = "O nome não pode estar em branco!")
-    @Schema(description = "Nome do plano", example = "Manhã")
+    @Schema(description = "Nome do turno", example = "Manhã")
     private String nome;
 
     @NotNull(groups = OnCreate.class)

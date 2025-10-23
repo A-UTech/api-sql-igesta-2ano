@@ -16,6 +16,10 @@ public class GestorRequestDTO {
     @Schema(description = "ID único da unidade que o gestor trabalha", example = "1234")
     private Integer idUnidade;
 
+    @Column(name = "id_empresa")
+    @Schema(description = "ID único da empresa que o gestor trabalha", example = "1234")
+    private Integer idEmpresa;
+
     @NotNull(groups = OnCreate.class)
     @Pattern(regexp = ".*\\S.*\\S.*", message = "O nome não pode estar em branco!")
     @Schema(description = "Nome do gestor", example = "Daniel Freitas")
