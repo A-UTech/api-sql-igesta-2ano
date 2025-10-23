@@ -19,7 +19,6 @@ public class Gestor {
     private String email;
     private String senha;
     private String cpf;
-<<<<<<< HEAD
 
     public Long getId() {
         return id;
@@ -68,6 +67,4 @@ public class Gestor {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-=======
->>>>>>> 8684c10 (Adicionando o swagger da unidade e corrigindo algumas coisas)
 }
