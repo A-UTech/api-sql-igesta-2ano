@@ -19,6 +19,7 @@ public class Condena {
     private Long id;
     private String nome;
     private String tipo;
+<<<<<<< HEAD
 
     public Long getId() {
         return id;
@@ -47,4 +48,6 @@ public class Condena {
     @OneToMany(mappedBy = "condena", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private Set<CondenaUnidade> unidadeCondenas = new HashSet<>();
+=======
+>>>>>>> 8684c10 (Adicionando o swagger da unidade e corrigindo algumas coisas)
 }

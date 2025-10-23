@@ -31,7 +31,7 @@ public interface TurnoOpenApi {
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Turno encontrado",
                     content = @Content(mediaType = "application/json",
-                            schema = @Schema(implementation = PlanoResponseDTO.class))),
+                            schema = @Schema(implementation = TurnoResponseDTO.class))),
             @ApiResponse(responseCode = "404", description = "Turno não encontrado")
     })
     public ResponseEntity<TurnoResponseDTO> buscarTurnoPorId(@Parameter(description = "ID do turno a ser buscado") @PathVariable Long id);

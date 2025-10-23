@@ -15,12 +15,18 @@ public class Unidade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
+
     private String estado;
+
     private String cidade;
+
     private String cnpj;
+
     @Column(name = "id_plano")
     private Long idPlano;
+
     @Column(name = "id_empresa")
     private Long idEmpresa;
     private String senha;
