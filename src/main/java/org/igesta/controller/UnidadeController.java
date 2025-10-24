@@ -18,7 +18,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/igesta/unidades")
+@RequestMapping("/igesta/admin/unidades")
 public class UnidadeController implements UnidadeOpenApi {
 
     private final UnidadeService unidadeService;

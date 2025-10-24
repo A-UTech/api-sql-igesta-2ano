@@ -16,7 +16,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/igesta/empresas")
+@RequestMapping("/igesta/admin/empresas")
 public class EmpresaController implements EmpresaOpenApi {
 
     private final EmpresaService empresaService;
