@@ -16,7 +16,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/igesta/turnos")
+@RequestMapping("/igesta/admin/turnos")
 public class TurnoController implements TurnoOpenApi {
 
     private final TurnoService turnoService;

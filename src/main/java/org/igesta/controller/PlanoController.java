@@ -16,7 +16,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/igesta/planos")
+@RequestMapping("/igesta/admin/planos")
 public class PlanoController implements PlanoOpenApi {
 
     private final PlanoService planoService;
