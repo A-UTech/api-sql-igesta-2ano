@@ -16,6 +16,7 @@ import java.util.List;
 public class CondenaService {
     private final CondenaRepository condenaRepository;
     private final ObjectMapper objectMapper;
+
     public CondenaService(CondenaRepository condenaRepository, ObjectMapper objectMapper) {
         this.condenaRepository = condenaRepository;
         this.objectMapper = objectMapper;
