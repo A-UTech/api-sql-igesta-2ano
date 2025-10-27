@@ -17,7 +17,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/igesta/admin/condenas")
+@RequestMapping("/igesta/user/condenas")
 public class CondenaController implements CondenaOpenApi {
 
     private final CondenaService condenaService;
