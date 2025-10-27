@@ -16,7 +16,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/igesta/admin/lideres")
+@RequestMapping("/igesta/user/lideres")
 public class LiderController implements LiderOpenApi {
 
     private final LiderService liderService;

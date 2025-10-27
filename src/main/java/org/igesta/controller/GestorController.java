@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/igesta/admin/gestores")
+@RequestMapping("/igesta/user/gestores")
 public class GestorController implements GestorOpenApi {
 
     private final GestorService gestorService;
