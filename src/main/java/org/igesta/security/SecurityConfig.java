@@ -46,10 +46,7 @@ public class SecurityConfig {
             public Authentication authenticate(Authentication authentication) throws AuthenticationException {
                 String credencial = authentication.getName();
                 String senha = authentication.getCredentials().toString();
-
-                // Verifica credencial + senha direto no banco
                 UserDetails user = customUserDetailsService.loadUserByCredencialAndSenha(credencial, senha);
-
                 return new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
             }
 
