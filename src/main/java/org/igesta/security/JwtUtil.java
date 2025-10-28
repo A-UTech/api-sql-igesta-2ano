@@ -6,7 +6,6 @@ import io.jsonwebtoken.security.Keys;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
-
 import javax.crypto.SecretKey;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -18,9 +17,8 @@ public class JwtUtil {
     private final long expirationMillis;
 
     public JwtUtil() {
-        var dotenv = io.github.cdimascio.dotenv.Dotenv.load();
-        this.secretKey = Keys.hmacShaKeyFor(Base64.getDecoder().decode(dotenv.get("JWT_SECRET")));
-        this.expirationMillis = Long.parseLong(dotenv.get("JWT_EXPIRATION"));
+        this.secretKey = Keys.hmacShaKeyFor(Base64.getDecoder().decode(System.getenv("JWT_SECRET")));
+        this.expirationMillis = Long.parseLong(System.getenv("JWT_EXPIRATION"));
     }
 
     public String generateToken(UserDetails userDetails) {
