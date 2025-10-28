@@ -44,9 +44,9 @@ public class SecurityConfig {
         return new AuthenticationProvider() {
             @Override
             public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-                String credencial = authentication.getName();
+                String emailCnpj = authentication.getName();
                 String senha = authentication.getCredentials().toString();
-                UserDetails user = customUserDetailsService.loadUserByCredencialAndSenha(credencial, senha);
+                UserDetails user = customUserDetailsService.loadUserByCredencialAndSenha(emailCnpj, senha);
                 return new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
             }
 
@@ -77,7 +77,7 @@ public class SecurityConfig {
                         .requestMatchers("/igesta/auth/**").permitAll()
                         .requestMatchers("/swagger-ui/**").permitAll()
                         .requestMatchers("/v3/api-docs/**").permitAll()
-                        .requestMatchers("/igesta/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/igesta/admin/**").hasAnyRole("ADMIN")
                         .requestMatchers("/igesta/user/**").hasAnyRole("ADMIN","GESTOR","UNIDADE","LIDER")
                         .anyRequest().authenticated()
                 )
