@@ -1,10 +1,7 @@
 package org.igesta.security;
 
 import org.igesta.dto.TipoUsuarioResponseDTO;
-import org.igesta.service.GestorService;
-import org.igesta.service.LiderService;
-import org.igesta.service.TipoUsuarioService;
-import org.igesta.service.UnidadeService;
+import org.igesta.service.*;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -19,24 +16,33 @@ public class CustomUserDetailsService implements UserDetailsService {
     private final LiderService liderService;
     private final UnidadeService unidadeService;
 
+    private final AdminService adminService;
+
     public CustomUserDetailsService(TipoUsuarioService tipoUsuarioService,
                                     GestorService gestorService,
                                     LiderService liderService,
-                                    UnidadeService unidadeService) {
+                                    UnidadeService unidadeService,
+                                    AdminService adminService) {
         this.tipoUsuarioService = tipoUsuarioService;
         this.gestorService = gestorService;
         this.liderService = liderService;
         this.unidadeService = unidadeService;
+        this.adminService = adminService;
     }
 
-    public UserDetails loadUserByCredencialAndSenha(String credencial, String senha) {
-        TipoUsuarioResponseDTO tipoUsuario = tipoUsuarioService.realizarLogin(credencial, senha);
+    public UserDetails loadUserByCredencialAndSenha(String emailCnpj, String senha) {
+        TipoUsuarioResponseDTO tipoUsuario = tipoUsuarioService.realizarLogin(emailCnpj, senha);
 
         String username;
         String senhaReal;
         String role = tipoUsuario.getTipoUsuario().toUpperCase();
 
         switch (role) {
+            case "ADMIN":
+                var admin = adminService.buscarAdminPorId(tipoUsuario.getId());
+                username = admin.getEmail();
+                senhaReal = admin.getSenha();
+                break;
             case "GESTOR":
                 var gestor = gestorService.buscarGestorPorId(tipoUsuario.getId());
                 username = gestor.getEmail();

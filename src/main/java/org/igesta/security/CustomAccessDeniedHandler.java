@@ -22,7 +22,7 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
         response.setStatus(HttpServletResponse.SC_FORBIDDEN);
         response.setContentType("application/json");
         Map<String, String> errorResponse = Map.of("error",
-                "You have no permission to access this resource");
+                "Voce nao tem permissao para acessar esse recurso");
         response.getWriter().write(objectMapper.writeValueAsString(errorResponse));
     }
 }

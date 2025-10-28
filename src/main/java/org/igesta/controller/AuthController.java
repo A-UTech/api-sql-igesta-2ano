@@ -27,16 +27,16 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Map<String, String> loginRequest) {
         try {
-            String credencial = loginRequest.get("credencial");
-            String password = loginRequest.get("password");
+            String emailCnpj = loginRequest.get("emailCnpj");
+            String senha = loginRequest.get("senha");
 
-            if (credencial == null || password == null) {
+            if (emailCnpj == null || senha == null) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                         .body(Map.of("error", "Credencial e senha são obrigatórios"));
             }
 
             Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(credencial, password)
+                    new UsernamePasswordAuthenticationToken(emailCnpj, senha)
             );
 
             UserDetails userDetails = (UserDetails) authentication.getPrincipal();
@@ -45,9 +45,7 @@ public class AuthController {
             String token = jwtUtil.generateToken(userDetails);
 
             return ResponseEntity.ok(Map.of(
-                    "token", token,
-                    "credencial", userDetails.getUsername(),
-                    "roles", userDetails.getAuthorities()
+                    "token", token
             ));
 
         } catch (AuthenticationException e) {

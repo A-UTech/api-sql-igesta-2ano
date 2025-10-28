@@ -11,7 +11,6 @@ import org.igesta.dto.UnidadeResponseDTO;
 import org.igesta.model.Unidade;
 import org.springframework.http.ResponseEntity;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -34,7 +33,7 @@ public interface UnidadeOpenApi {
                             schema = @Schema(implementation = UnidadeResponseDTO.class))),
             @ApiResponse(responseCode = "404", description = "Unidade não encontrada")
     })
-    public ResponseEntity<UnidadeResponseDTO> buscarUnidadePorId(@Parameter(description = "ID da unidade a ser buscada") @PathVariable Long id);
+    public ResponseEntity<UnidadeResponseDTO> buscarUnidadePorId(@Parameter(description = "ID da unidade a ser buscada") Long id);
 
     @Operation(summary = "Insere uma nova unidade",
             description = "Cria uma nova unidade no sistema")
