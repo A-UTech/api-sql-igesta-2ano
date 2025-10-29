@@ -77,7 +77,7 @@ public class SecurityConfig {
                         .requestMatchers("/igesta/auth/**").permitAll()
                         .requestMatchers("/swagger-ui/**").permitAll()
                         .requestMatchers("/v3/api-docs/**").permitAll()
-                        .requestMatchers("/igesta/admin/**").hasAnyRole("ADMIN")
+                        .requestMatchers("/igesta/admin/**").hasRole("ADMIN")
                         .requestMatchers("/igesta/user/**").hasAnyRole("ADMIN","GESTOR","UNIDADE","LIDER")
                         .anyRequest().authenticated()
                 )
