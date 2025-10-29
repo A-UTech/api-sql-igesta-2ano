@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalTime;
 import java.util.Date;
 
 @Entity
@@ -19,9 +20,9 @@ public class Turno {
 
     private String nome;
 
-    private Date inicio;
+    private LocalTime inicio;
 
-    private Date fim;
+    private LocalTime fim;
 
     @Column(name = "id_unidade")
     private Long idUnidade;

@@ -8,10 +8,13 @@ import org.igesta.openapi.TurnoOpenApi;
 import org.igesta.service.TurnoService;
 import org.igesta.validation.OnCreate;
 import org.igesta.validation.OnPatch;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
 
 @CrossOrigin(origins = "*")
@@ -35,6 +38,15 @@ public class TurnoController implements TurnoOpenApi {
     public ResponseEntity<TurnoResponseDTO> buscarTurnoPorId(@PathVariable Long id) {
         TurnoResponseDTO turno = turnoService.buscarTurnoPorId(id);
         return ResponseEntity.ok(turno);
+    }
+
+    @GetMapping("/selecionarPorUnidadeEPeriodo/{idUnidade}/{inicio}/{fim}")
+    public ResponseEntity<List<TurnoResponseDTO>> buscarTurnoPorUnidadeEPeriodo(
+            @RequestParam  Long idUnidade,
+            @RequestParam @DateTimeFormat(pattern = "HH:mm:ss") LocalTime inicio,
+            @RequestParam @DateTimeFormat(pattern = "HH:mm:ss") LocalTime fim) {
+        List<TurnoResponseDTO> turnos = turnoService.buscarTurnoPorUnidadeEPeriodo(idUnidade, inicio, fim);
+        return ResponseEntity.ok(turnos);
     }
 
     @PostMapping("/inserir")
