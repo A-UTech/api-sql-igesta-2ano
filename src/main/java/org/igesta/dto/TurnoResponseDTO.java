@@ -16,8 +16,11 @@ public class TurnoResponseDTO {
     private String nome;
 
     @Schema(description = "Hora de início do turno", example = "07:00")
-    private String horarioInicio;
+    private String inicio;
 
     @Schema(description = "Hora de término do turno", example = "15:00")
-    private String horarioFim;
+    private String fim;
+
+    @Schema(description = "ID da unidade associada ao turno", example = "1")
+    private Long idUnidade;
 }

@@ -63,14 +63,14 @@ public class TurnoService {
             turno.setNome(nome);
         }
 
-        if (atualizacoes.getHoraInicio() != null) {
-            Date horaInicio =  atualizacoes.getHoraInicio();
-            atualizacoes.setHoraInicio(horaInicio);
+        if (atualizacoes.getInicio() != null) {
+            Date horaInicio =  atualizacoes.getInicio();
+            atualizacoes.setInicio(horaInicio);
         }
 
-        if (atualizacoes.getHoraFim() != null) {
-            Date horaFim =  atualizacoes.getHoraFim();
-            atualizacoes.setHoraFim(horaFim);
+        if (atualizacoes.getFim() != null) {
+            Date horaFim =  atualizacoes.getFim();
+            atualizacoes.setFim(horaFim);
         }
 
         return objectMapper.convertValue(turnoRepository.save(turno), TurnoResponseDTO.class);
