@@ -1,5 +1,7 @@
 package org.igesta.controller;
 
+import org.igesta.dto.AuthRequestDTO;
+import org.igesta.openapi.AuthOpenApi;
 import org.igesta.security.JwtUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +16,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("igesta/auth")
-public class AuthController {
+public class AuthController implements AuthOpenApi {
 
     private final AuthenticationManager authenticationManager;
     private final JwtUtil jwtUtil;
@@ -25,10 +27,10 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody Map<String, String> loginRequest) {
+    public ResponseEntity<?> login(@RequestBody AuthRequestDTO authRequestDTO) {
         try {
-            String emailCnpj = loginRequest.get("emailCnpj");
-            String senha = loginRequest.get("senha");
+            String emailCnpj = authRequestDTO.getEmailCnpj();
+            String senha = authRequestDTO.getSenha();
 
             if (emailCnpj == null || senha == null) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST)
