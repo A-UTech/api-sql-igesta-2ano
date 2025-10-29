@@ -17,12 +17,12 @@ public class Turno {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "id_gestor")
-    private Long idGestor;
-
     private String nome;
 
-    private Date horaInicio;
+    private Date inicio;
 
-    private Date horaFim;
+    private Date fim;
+
+    @Column(name = "id_unidade")
+    private Long idUnidade;
 }
