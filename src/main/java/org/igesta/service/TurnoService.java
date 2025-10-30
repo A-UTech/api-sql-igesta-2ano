@@ -33,16 +33,14 @@ public class TurnoService {
                 .orElseThrow(() -> new EntityNotFoundException("Turno não encontrado")), TurnoResponseDTO.class);
     }
 
-    public List<TurnoResponseDTO> buscarTurnoPorUnidadeEPeriodo(Long idUnidade, LocalTime inicio, LocalTime fim) {
-        List<Turno> turnos = turnoRepository.findByIdUnidadeAndInicioAndFim(idUnidade, inicio, fim);
+    public TurnoResponseDTO buscarTurnoPorUnidadeEPeriodo(Long idUnidade, LocalTime inicio, LocalTime fim) {
+        Turno turno = turnoRepository.findByIdUnidadeAndInicioAndFim(idUnidade, inicio, fim);
 
-        if (turnos.isEmpty()) {
+        if (turno == null) {
             throw new EntityNotFoundException("Nenhum turno encontrado");
         }
 
-        return turnos.stream()
-                .map(turno -> objectMapper.convertValue(turno, TurnoResponseDTO.class))
-                .toList();
+        return objectMapper.convertValue(turno, TurnoResponseDTO.class);
     }
 
     @Transactional

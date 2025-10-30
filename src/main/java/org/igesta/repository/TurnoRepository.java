@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface TurnoRepository extends JpaRepository<Turno, Long> {
 
-    List<Turno> findByIdUnidadeAndInicioAndFim(Long idUnidade, LocalTime inicio, LocalTime fim);
+    Turno findByIdUnidadeAndInicioAndFim(Long idUnidade, LocalTime inicio, LocalTime fim);
 }

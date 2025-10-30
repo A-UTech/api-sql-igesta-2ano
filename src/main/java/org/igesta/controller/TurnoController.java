@@ -41,12 +41,12 @@ public class TurnoController implements TurnoOpenApi {
     }
 
     @GetMapping("/selecionarPorUnidadeEPeriodo/{idUnidade}/{inicio}/{fim}")
-    public ResponseEntity<List<TurnoResponseDTO>> buscarTurnoPorUnidadeEPeriodo(
+    public ResponseEntity<TurnoResponseDTO> buscarTurnoPorUnidadeEPeriodo(
             @PathVariable  Long idUnidade,
             @PathVariable @DateTimeFormat(pattern = "HH:mm:ss") LocalTime inicio,
             @PathVariable @DateTimeFormat(pattern = "HH:mm:ss") LocalTime fim) {
-        List<TurnoResponseDTO> turnos = turnoService.buscarTurnoPorUnidadeEPeriodo(idUnidade, inicio, fim);
-        return ResponseEntity.ok(turnos);
+        TurnoResponseDTO turno = turnoService.buscarTurnoPorUnidadeEPeriodo(idUnidade, inicio, fim);
+        return ResponseEntity.ok(turno);
     }
 
     @PostMapping("/inserir")
