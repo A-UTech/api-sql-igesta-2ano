@@ -23,14 +23,14 @@ public interface CondenaUnidadeOpenApi {
     @ApiResponse(responseCode = "400", description = "Condena ou Unidade inválida")
     @ApiResponse(responseCode = "404", description = "Condena ou Unidade não encontrada")
     @ApiResponse(responseCode = "500", description = "Erro interno do servidor")
-    public ResponseEntity<CondenaUnidadeResponseDTO> associar(@RequestBody @Validated({OnCreate.class, Default.class}) CondenaUnidadeRequestDTO dto);
+    public ResponseEntity<CondenaUnidadeResponseDTO> associar(@PathVariable Long unidadeId, @PathVariable Long condenaId);
 
     @Operation(summary = "Desassociar uma condena de uma unidade",
             description = "Desassocia uma condena de uma unidade pelos seus IDs")
     @ApiResponse(responseCode = "200", description = "Condena desassociada com sucesso")
     @ApiResponse(responseCode = "404", description = "Condena ou Unidade não encontrada")
     @ApiResponse(responseCode = "500", description = "Erro interno do servidor")
-    public ResponseEntity<Void> desassociar(@RequestBody @Validated({OnCreate.class, Default.class}) CondenaUnidadeRequestDTO dto);
+    public ResponseEntity<Void> desassociar(@PathVariable Long unidadeId, @PathVariable Long condenaId);
 
     @Operation(summary = "Listar condenas associadas a uma unidade",
             description = "Lista todas as condenas de uma unidade")

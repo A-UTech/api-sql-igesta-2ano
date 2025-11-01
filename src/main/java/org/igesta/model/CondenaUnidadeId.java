@@ -10,17 +10,17 @@ import java.io.Serializable;
 public class CondenaUnidadeId implements Serializable {
 
     @Column(name = "id_condena")
-    private Integer idCondena;
+    private Long idCondena;
     @Column(name = "id_unidade")
-    private Integer idUnidade;
+    private Long idUnidade;
 
-    public CondenaUnidadeId(Integer idCondena, Integer idUnidade) {
+    public CondenaUnidadeId(Long idCondena, Long idUnidade) {
         this.idCondena = idCondena;
         this.idUnidade = idUnidade;
     }
 
-    public Integer getIdCondena() { return idCondena; }
-    public void setIdCondena(Integer idCondena) { this.idCondena = idCondena; }
-    public Integer getIdUnidade() { return idUnidade; }
-    public void setIdUnidade(Integer idUnidade) { this.idUnidade = idUnidade; }
+    public Long getIdCondena() { return idCondena; }
+    public void setIdCondena(Long idCondena) { this.idCondena = idCondena; }
+    public Long getIdUnidade() { return idUnidade; }
+    public void setIdUnidade(Long idUnidade) { this.idUnidade = idUnidade; }
 }

@@ -12,11 +12,11 @@ import lombok.Setter;
 public class CondenaUnidade {
     @Id
     @Column(name = "id_condena")
-    private Integer idCondena;
+    private Long idCondena;
 
     @Id
     @Column(name = "id_unidade")
-    private Integer idUnidade;
+    private Long idUnidade;
 
     @ManyToOne
     @JoinColumn(name = "id_condena", referencedColumnName = "id", insertable = false, updatable = false)

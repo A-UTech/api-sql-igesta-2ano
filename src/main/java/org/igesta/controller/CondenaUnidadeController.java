@@ -21,18 +21,17 @@ public class CondenaUnidadeController implements CondenaUnidadeOpenApi {
 
     @Autowired
     private CondenaUnidadeService service;
-    @PostMapping("/associar")
-    public ResponseEntity<CondenaUnidadeResponseDTO> associar(
-            @Validated(OnCreate.class) @RequestBody CondenaUnidadeRequestDTO requestDTO) {
+    @PostMapping("/associar/{unidadeId}/{condenaId}")
+    public ResponseEntity<CondenaUnidadeResponseDTO> associar(@PathVariable Long unidadeId, @PathVariable Long condenaId) {
 
-        CondenaUnidadeResponseDTO response = service.associar(requestDTO);
+        CondenaUnidadeResponseDTO response = service.associar(unidadeId, condenaId);
 
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
-    @DeleteMapping("/desassociar")
-    public ResponseEntity<Void> desassociar(@RequestBody CondenaUnidadeRequestDTO requestDTO) {
+    @DeleteMapping("/desassociar/{idUnidade}/{idCondena}")
+    public ResponseEntity<Void> desassociar(@PathVariable Long unidadeId, @PathVariable Long condenaId) {
 
-        service.desassociar(requestDTO);
+        service.desassociar(unidadeId, condenaId);
 
         return ResponseEntity.noContent().build();
     }

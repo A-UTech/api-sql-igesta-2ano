@@ -27,17 +27,17 @@ public class CondenaUnidadeService {
     private CondenaRepository condenaRepository;
 
     @Transactional
-    public CondenaUnidadeResponseDTO associar(CondenaUnidadeRequestDTO requestDTO) {
+    public CondenaUnidadeResponseDTO associar(Long unidadeId, Long condenaId) {
 
-        Unidade unidade = unidadeRepository.findById(requestDTO.getIdUnidade().longValue())
-                .orElseThrow(() -> new RuntimeException("Unidade não encontrada com ID: " + requestDTO.getIdUnidade()));
+        Unidade unidade = unidadeRepository.findById(unidadeId)
+                .orElseThrow(() -> new RuntimeException("Unidade não encontrada com ID: " + unidadeId));
 
-        Condena condena = condenaRepository.findById(requestDTO.getIdCondena().longValue())
-                .orElseThrow(() -> new RuntimeException("Condena não encontrada com ID: " + requestDTO.getIdCondena()));
+        Condena condena = condenaRepository.findById(condenaId)
+                .orElseThrow(() -> new RuntimeException("Condena não encontrada com ID: " + condenaId));
 
         CondenaUnidade condenaUnidade = new CondenaUnidade();
-        condenaUnidade.setIdUnidade(requestDTO.getIdUnidade());
-        condenaUnidade.setIdCondena(requestDTO.getIdCondena());
+        condenaUnidade.setIdUnidade(unidadeId);
+        condenaUnidade.setIdCondena(condenaId);
 
         condenaUnidadeRepository.save(condenaUnidade);
 
@@ -45,8 +45,8 @@ public class CondenaUnidadeService {
     }
 
     @Transactional
-    public void desassociar(CondenaUnidadeRequestDTO requestDTO) {
-        CondenaUnidadeId id = new CondenaUnidadeId(requestDTO.getIdCondena(), requestDTO.getIdUnidade());
+    public void desassociar(Long unidadeId, Long condenaId) {
+        CondenaUnidadeId id = new CondenaUnidadeId(unidadeId, condenaId);
 
         condenaUnidadeRepository.deleteById(id);
     }
@@ -57,7 +57,7 @@ public class CondenaUnidadeService {
 
         return entidades.stream()
                 .map(entidade -> new CondenaUnidadeResponseDTO(
-                        entidade.getIdCondena().intValue()
+                        entidade.getIdCondena()
                 ))
                 .collect(Collectors.toList());
     }
