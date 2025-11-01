@@ -46,9 +46,7 @@ public class CondenaUnidadeService {
 
     @Transactional
     public void desassociar(Long unidadeId, Long condenaId) {
-        CondenaUnidadeId id = new CondenaUnidadeId(unidadeId, condenaId);
-
-        condenaUnidadeRepository.deleteById(id);
+        condenaUnidadeRepository.deleteCondenaUnidadeByIdUnidadeAndIdCondena(unidadeId, condenaId);
     }
 
     public List<CondenaUnidadeResponseDTO> buscarCondenasPorUnidade(Integer unidadeId) {
