@@ -12,6 +12,7 @@ import java.util.List;
 @Repository
 public interface CondenaUnidadeRepository extends JpaRepository<CondenaUnidade, CondenaUnidadeId> {
     List<CondenaUnidade> findByIdUnidade(Integer idUnidade);
+    void deleteCondenaUnidadeByIdUnidadeAndIdCondena(Long idUnidade, Long idCondena);
     @Query("SELECT cu FROM CondenaUnidade cu JOIN FETCH cu.unidade u JOIN FETCH cu.condena c WHERE u.id = :idUnidade")
     List<CondenaUnidade> findCondenasByUnidadeIdJoinFetch(@Param("idUnidade") Integer idUnidade);
 }
