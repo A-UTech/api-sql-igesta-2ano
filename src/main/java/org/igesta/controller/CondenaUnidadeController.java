@@ -28,7 +28,7 @@ public class CondenaUnidadeController implements CondenaUnidadeOpenApi {
 
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
-    @DeleteMapping("/desassociar/{idUnidade}/{idCondena}")
+    @DeleteMapping("/desassociar/{unidadeId}/{condenaId}")
     public ResponseEntity<Void> desassociar(@PathVariable Long unidadeId, @PathVariable Long condenaId) {
 
         service.desassociar(unidadeId, condenaId);
