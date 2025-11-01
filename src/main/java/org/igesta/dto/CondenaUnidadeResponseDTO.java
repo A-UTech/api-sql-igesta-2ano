@@ -9,9 +9,9 @@ import lombok.Setter;
 @Schema(description = "DTO de Resposta para Associação Condena-Unidade")
 public class CondenaUnidadeResponseDTO {
 
-    private Integer idCondena;
+    private Long idCondena;
 
-    public CondenaUnidadeResponseDTO(Integer idCondena) {
+    public CondenaUnidadeResponseDTO(Long idCondena) {
         this.idCondena = idCondena;
     }
 
