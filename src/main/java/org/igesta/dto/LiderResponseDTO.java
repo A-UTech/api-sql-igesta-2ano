@@ -26,9 +26,6 @@ public class LiderResponseDTO {
     @Schema(description = "Senha do líder", example = "abcd")
     private String senha;
 
-    @Schema(description = "Cpf do líder", example = "676.767.676-76")
-    private String cpf;
-
     @Schema(description = "Área do líder", example = "Área Fria")
     private String area;
 }

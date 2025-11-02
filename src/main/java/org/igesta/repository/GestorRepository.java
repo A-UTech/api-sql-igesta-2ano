@@ -14,7 +14,4 @@ public interface GestorRepository extends JpaRepository<Gestor, Long> {
 
     @Query(value = "SELECT * FROM Gestor g WHERE LOWER(g.nome) LIKE LOWER(:nome)", nativeQuery = true)
     List<Gestor> findByParteNome(@Param("nome") String nome);
-
-    @Query(value = "SELECT * FROM Gestor g WHERE LOWER(g.cpf) = LOWER(:cpf)", nativeQuery = true)
-    List<Gestor> findByCpf(@Param("cpf") String cpf);
 }

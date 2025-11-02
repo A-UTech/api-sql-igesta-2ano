@@ -45,16 +45,6 @@ public interface GestorOpenApi {
     })
     public ResponseEntity<Object> buscarGestorPorNome(@Parameter(description = "Nome do gestor a ser buscado") @PathVariable String nome);
 
-    @Operation(summary = "Busca gestor por cpf",
-            description = "Retorna um gestor pelo seu cpf")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "Gestor encontrado",
-                    content = @Content(mediaType = "application/json",
-                            schema = @Schema(implementation = GestorResponseDTO.class))),
-            @ApiResponse(responseCode = "404", description = "Gestor não encontrado")
-    })
-    public ResponseEntity<Object> buscarGestorPorCpf(@Parameter(description = "Cpf do gestor a ser buscado") @PathVariable String cpf);
-
     @Operation(summary = "Busca gestor por parte do nome",
             description = "Retorna um gestor por parte do seu nome")
     @ApiResponses({
