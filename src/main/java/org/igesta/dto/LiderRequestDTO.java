@@ -16,9 +16,6 @@ public class LiderRequestDTO {
     @Column(name = "id_unidade")
     @Schema(description = "ID único da empresa que o líder trabalha", example = "1234")
     private Long idUnidade;
-    @Column(name = "id_empresa")
-    @Schema(description = "ID único da empresa que o líder trabalha", example = "1234")
-    private Long idEmpresa;
 
     @NotNull(groups = OnCreate.class)
     @Pattern(regexp = ".*\\S.*\\S.*", message = "O nome não pode estar em branco!")
