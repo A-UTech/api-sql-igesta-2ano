@@ -11,6 +11,8 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Getter
+@Setter
 public class Unidade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

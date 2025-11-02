@@ -30,9 +30,4 @@ public class GestorRequestDTO {
     @Pattern(regexp = ".*\\S.*\\S.*", message = "A senha não pode estar em branco!")
     @Schema(description = "Senha do gestor", example = "123456")
     private String senha;
-
-    @NotNull(groups = OnCreate.class)
-    @Pattern(regexp = ".*\\S.*\\S.*", message = "O cpf não pode estar em branco!")
-    @Schema(description = "Cpf do gestor", example = "222.222.222-22")
-    private String cpf;
 }

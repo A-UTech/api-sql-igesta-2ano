@@ -25,7 +25,4 @@ public class GestorResponseDTO {
 
     @Schema(description = "Senha do gestor", example = "123456")
     private String senha;
-
-    @Schema(description = "Cpf do gestor", example = "222.222.222-22")
-    private String cpf;
 }

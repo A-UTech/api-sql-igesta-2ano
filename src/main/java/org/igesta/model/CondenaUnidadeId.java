@@ -2,11 +2,16 @@ package org.igesta.model;
 
 import jakarta.persistence.Column;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 
 @EqualsAndHashCode
 @NoArgsConstructor
+@Getter
+@Setter
 public class CondenaUnidadeId implements Serializable {
 
     @Column(name = "id_condena")
@@ -18,9 +23,4 @@ public class CondenaUnidadeId implements Serializable {
         this.idCondena = idCondena;
         this.idUnidade = idUnidade;
     }
-
-    public Long getIdCondena() { return idCondena; }
-    public void setIdCondena(Long idCondena) { this.idCondena = idCondena; }
-    public Long getIdUnidade() { return idUnidade; }
-    public void setIdUnidade(Long idUnidade) { this.idUnidade = idUnidade; }
 }

@@ -47,12 +47,6 @@ public class GestorController implements GestorOpenApi {
         return ResponseEntity.ok(gestores);
     }
 
-    @GetMapping("/selecionarPorCpf/{cpf}")
-    public ResponseEntity<Object> buscarGestorPorCpf(@PathVariable String cpf) {
-        List<GestorResponseDTO> gestores = gestorService.buscarGestorPorCpf(cpf);
-        return ResponseEntity.ok(gestores);
-    }
-
     @GetMapping("/selecionarPorParteDoNome/{nome}")
     public ResponseEntity<Object> buscarGestorPorParteDoNome(@PathVariable String nome) {
         String nomeBuscado = "%" + nome + "%";

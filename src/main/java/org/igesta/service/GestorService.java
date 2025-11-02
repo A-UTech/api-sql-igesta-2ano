@@ -79,11 +79,6 @@ public class GestorService {
             gestor.setSenha(senha);
         }
 
-        if (atualizacoes.getCpf() != null) {
-            String cpf = atualizacoes.getCpf();
-            gestor.setNome(cpf);
-        }
-
         return objectMapper.convertValue(gestorRepository.save(gestor), GestorResponseDTO.class);
     }
 
@@ -101,18 +96,6 @@ public class GestorService {
 
     public List<GestorResponseDTO> buscarGestorPorParteDoNome(String nome) {
         List<Gestor> gestores = gestorRepository.findByParteNome(nome);
-        if (gestores.isEmpty()){
-            throw new EntityNotFoundException("Nenhum gestor encontrado");
-        }
-        List<GestorResponseDTO> listaResponseDTO =new ArrayList<>();
-        for (Gestor gestor : gestores){
-            listaResponseDTO.add(objectMapper.convertValue(gestor, GestorResponseDTO.class));
-        }
-        return listaResponseDTO;
-    }
-
-    public List<GestorResponseDTO> buscarGestorPorCpf(String cpf) {
-        List<Gestor> gestores = gestorRepository.findByCpf(cpf);
         if (gestores.isEmpty()){
             throw new EntityNotFoundException("Nenhum gestor encontrado");
         }

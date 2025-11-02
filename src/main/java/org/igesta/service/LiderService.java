@@ -79,11 +79,6 @@ public class LiderService {
             lider.setEmail(email);
         }
 
-        if (atualizacoes.getCpf() != null) {
-            String cpf =  atualizacoes.getCpf();
-            lider.setCpf(cpf);
-        }
-
         if (atualizacoes.getSenha() != null) {
             String senha =  atualizacoes.getSenha();
             lider.setSenha(senha);

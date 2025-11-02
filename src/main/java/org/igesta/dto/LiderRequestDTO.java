@@ -33,11 +33,6 @@ public class LiderRequestDTO {
     private String senha;
 
     @NotNull(groups = OnCreate.class)
-    @Pattern(regexp = ".*\\S.*\\S.*", message = "O CPF não pode estar em branco!")
-    @Schema(description = "Cpf do líder", example = "676.767.676-76")
-    private String cpf;
-
-    @NotNull(groups = OnCreate.class)
     @Pattern(regexp = ".*\\S.*\\S.*", message = "A área não pode estar em branco!")
     @Schema(description = "Área do líder", example = "Área Fria")
     private String area;
