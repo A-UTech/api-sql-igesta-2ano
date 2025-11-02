@@ -78,7 +78,12 @@ public class UnidadeService {
 
         if (atualizacoes.getCnpj() != null) {
             String cnpj =  atualizacoes.getCnpj();
-            atualizacoes.setCidade(cnpj);
+            atualizacoes.setCnpj(cnpj);
+        }
+
+        if (atualizacoes.getSenha() != null) {
+            String senha = atualizacoes.getSenha();
+            atualizacoes.setSenha(senha);
         }
 
 
