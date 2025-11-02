@@ -17,7 +17,8 @@ public class CorsConfig {
 
         config.setAllowedOrigins(Arrays.asList(
                 "https://area-restrita-2ano.onrender.com",
-                "http://localhost:5173"
+                "http://localhost:5173",
+                "https://autech-2-0.onrender.com"
         ));
 
         config.setAllowedMethods(Arrays.asList(

@@ -78,7 +78,8 @@ public class SecurityConfig {
 
         config.setAllowedOrigins(List.of(
                 "https://area-restrita-2ano.onrender.com",
-                "http://localhost:5173"
+                "http://localhost:5173",
+                "https://autech-2-0.onrender.com"
         ));
 
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
