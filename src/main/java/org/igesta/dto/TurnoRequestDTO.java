@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NegativeOrZero;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.Getter;
 import lombok.Setter;
 import org.igesta.validation.OnCreate;
@@ -28,7 +29,7 @@ public class TurnoRequestDTO {
     private LocalTime fim;
 
     @NotNull(groups = OnCreate.class)
-    @NegativeOrZero(message = "O ID da unidade deve ser um número positivo ou zero!")
+    @PositiveOrZero(message = "O ID da unidade deve ser um número positivo ou zero!")
     @Schema(description = "ID da unidade associada ao turno", example = "1")
     private Long idUnidade;
 }
