@@ -17,10 +17,6 @@ public class GestorResponseDTO {
     @Schema(description = "ID único da unidade que o gestor trabalha", example = "1234")
     private Integer idUnidade;
 
-    @Column(name = "id_empresa")
-    @Schema(description = "ID único da empresa que o gestor trabalha", example = "1234")
-    private Integer idEmpresa;
-
     @Schema(description = "Nome do gestor", example = "Daniel Freitas")
     private String nome;
 

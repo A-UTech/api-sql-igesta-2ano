@@ -17,10 +17,6 @@ public class LiderResponseDTO {
     @Schema(description = "ID único da unidade que o líder trabalha", example = "1234")
     private Long idUnidade;
 
-    @Column(name = "id_empresa")
-    @Schema(description = "ID único da empresa que o líder trabalha", example = "1234")
-    private Integer idEmpresa;
-
     @Schema(description = "Nome do líder", example = "Thiago Gabriel Marinho Cardoso")
     private String nome;
 
