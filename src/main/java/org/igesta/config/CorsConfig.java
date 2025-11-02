@@ -15,16 +15,17 @@ public class CorsConfig {
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // ✅ URL do frontend (Vite)
         config.setAllowedOrigins(Arrays.asList(
-                "http://localhost:5173",
-                "https://seu-dominio-front.vercel.app"
+                "https://area-restrita-2ano.onrender.com",
+                "http://localhost:5173"
         ));
 
-        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        config.setAllowedHeaders(Arrays.asList("Content-Type", "Authorization"));
+        config.setAllowedMethods(Arrays.asList(
+                "GET", "POST", "PUT", "DELETE", "OPTIONS"
+        ));
+        config.setAllowedHeaders(Arrays.asList("*"));
+        config.addExposedHeader("Authorization");
         config.setAllowCredentials(true);
-
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
