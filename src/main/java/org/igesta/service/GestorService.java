@@ -62,7 +62,7 @@ public class GestorService {
         Gestor gestor = gestorRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Gestor não encontrado"));
 
-        Gestor atualizacoes =objectMapper.convertValue(dto, Gestor.class);
+        Gestor atualizacoes = objectMapper.convertValue(dto, Gestor.class);
 
         if (atualizacoes.getNome() != null) {
             String nome = atualizacoes.getNome();
@@ -71,7 +71,7 @@ public class GestorService {
 
         if (atualizacoes.getEmail() != null) {
             String email = atualizacoes.getEmail();
-            gestor.setNome(email);
+            gestor.setEmail(email);
         }
 
         if (atualizacoes.getSenha() != null) {
