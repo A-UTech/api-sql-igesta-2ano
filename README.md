@@ -13,22 +13,6 @@ O projeto tem como objetivo fornecer uma base sólida para aprendizado de APIs R
 - Configuração via .env
 - Deploy em nuvem via Render
 
-## 📂 Estrutura do Projeto
-api-sql-igesta-2ano/
-│
-├── src/                     # Código-fonte principal
-│   ├── controller/          # Endpoints REST
-│   ├── model/               # Entidades (tabelas)
-│   ├── repository/          # Repositórios (CRUD)
-│   ├── security/            # Autenticação JWT
-│   └── ...                  
-│
-├── .env                     # Variáveis de ambiente (não versionado)
-├── pom.xml                  # Dependências Maven
-├── Dockerfile               # Build da aplicação
-├── docker-compose.yml       # Ambiente containerizado
-└── README.md
-
 
 ## ⚙️ Configuração do ambiente (.env)
 As informações sensíveis (como URL do banco, usuário e senha) estão no arquivo .env, que não deve ser versionado no repositório.
